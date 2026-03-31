@@ -4,11 +4,13 @@ local function enable_transparency()
 end
 return {
     {
-        "bluz71/vim-moonfly-colors",
+        "L-Colombo/oldschool.nvim",
         config = function()
-            vim.cmd.colorscheme "moonfly"
+            vim.opt.termguicolors = true
+            require("oldschool").setup({})
+            vim.cmd.colorscheme "oldschool"
             enable_transparency()
-        end
+        end,
     },
     {
         "nvim-lualine/lualine.nvim",
@@ -16,7 +18,7 @@ return {
             "nvim-tree/nvim-web-devicons",
         },
         opts = {
-            theme = "moonfly",
+            theme = "oldschool",
         }
     },
 }
